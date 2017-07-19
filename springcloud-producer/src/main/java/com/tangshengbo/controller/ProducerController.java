@@ -11,14 +11,14 @@ import java.util.Date;
 /**
  * Created by Tang on 2017/7/19.
  */
-@RestController
+@RestController("/producer")
 public class ProducerController {
 
     private static Logger logger = LoggerFactory.getLogger(ProducerController.class);
 
-    @GetMapping("currentDateTime")
+    @GetMapping("/currentDateTime")
     public String getDateInstance() {
         logger.info("ProducerController.............");
-        return FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss").format(new Date());
+        return FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\tproducer";
     }
 }
