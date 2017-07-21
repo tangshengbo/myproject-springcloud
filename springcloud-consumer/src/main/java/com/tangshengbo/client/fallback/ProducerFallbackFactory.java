@@ -23,6 +23,10 @@ public class ProducerFallbackFactory implements FallbackFactory<ProducerClient>{
             public String getDateInstance() {
                 return msg;
             }
+            @Override
+            public int getWeek(String currentDate) {
+                return 0;
+            }
         };
     }
 }

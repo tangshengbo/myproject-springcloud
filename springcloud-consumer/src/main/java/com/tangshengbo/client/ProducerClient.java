@@ -2,6 +2,7 @@ package com.tangshengbo.client;
 
 import com.tangshengbo.client.fallback.ProducerFallbackFactory;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,4 +14,7 @@ public interface ProducerClient {
 
     @RequestMapping(method = RequestMethod.GET, path = "currentDateTime")
     String getDateInstance();
+
+    @RequestMapping(method = RequestMethod.GET, path = "/week/{currentDate}")
+    int getWeek(@PathVariable("currentDate") String currentDate);
 }
