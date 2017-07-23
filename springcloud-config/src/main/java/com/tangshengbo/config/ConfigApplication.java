@@ -10,9 +10,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * Created by Tang on 2017/7/19.
  */
-@SpringBootApplication
-@EnableConfigServer
 @EnableEurekaClient
+@EnableConfigServer
+@SpringBootApplication
 public class ConfigApplication {
 
     private static Logger logger = LoggerFactory.getLogger(ConfigApplication.class);

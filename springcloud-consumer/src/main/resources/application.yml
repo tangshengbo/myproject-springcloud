@@ -16,3 +16,11 @@ service0:
     ReadTimeout: 1000
     ConnectTimeout: 500
     MaxAutoRetries: 1  # SR6版本,这里设为1,会重试3次,重试次数还和另外的两个值有关
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-center # 配置中心的spring.application.name
+      fail-fast: true # 如果连接配置中心出错,则中断程序
+      username: test
+      password: test
