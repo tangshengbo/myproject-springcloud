@@ -1,4 +1,4 @@
-package com.tangshengbo;
+package com.tangshengbo.javaconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
