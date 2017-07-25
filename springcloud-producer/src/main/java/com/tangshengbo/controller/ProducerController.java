@@ -3,6 +3,7 @@ package com.tangshengbo.controller;
 import org.apache.commons.lang.time.FastDateFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -17,6 +18,9 @@ import java.util.Date;
 public class ProducerController {
 
     private static Logger logger = LoggerFactory.getLogger(ProducerController.class);
+
+    @Value("${server.port}")
+    private String port;
 
     @GetMapping("/currentDateTime")
     public String getDateInstance() {
@@ -43,4 +47,9 @@ public class ProducerController {
         return dayForWeek;
     }
 
+    @RequestMapping("/port")
+    public String getServerPort(@RequestParam("name") String name) {
+        logger.info("ProducerController.............getServerPort");
+        return "hi " + name + ",i am from port:" + port;
+    }
 }

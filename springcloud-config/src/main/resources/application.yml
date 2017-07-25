@@ -5,7 +5,7 @@ spring:
     config:
       server:
         native:
-          search-locations: file:///E:\Users\TangShengBo\intellJidea\myproject-springcloud\springcloud-config\src\main\resources\config #配置文件根目录
+          search-locations: file:///E:/Users/TangShengBo/ntellJidea/myproject-springcloud/springcloud-config/sr/cmain/resources/config #配置文件根目录
   application:
     name: config-center
   profiles:

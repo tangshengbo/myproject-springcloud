@@ -10,3 +10,4 @@ eureka:
     instance-id: http://localhost:8085
 server:
   port: 8085
+  servlet-path: /producer
