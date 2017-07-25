@@ -1,6 +1,7 @@
 package com.tangshengbo.controller;
 
 import com.tangshengbo.client.ProducerClient;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.time.FastDateFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,7 @@ public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @ApiOperation(" 测试方法")
     @GetMapping("/currentDateTime")
     public String getDateInstance() {
         logger.info("ConsumerController.............");
@@ -38,8 +40,9 @@ public class ConsumerController {
     @RequestMapping(value = "/port", method = RequestMethod.GET)
     public String getServerPort(@RequestParam("name") String name) {
         logger.info("getServerPort..................");
-        String result = restTemplate.getForObject("http://producer/producer/port?name=" + name, String.class);
-        //client.getServerPort(name) 使用feign
+        String result;
+//      result = restTemplate.getForObject("http://producer/producer/port?name=" + name, String.class);
+        result =client.getServerPort(name); //使用feign
         return result;
     }
 }
