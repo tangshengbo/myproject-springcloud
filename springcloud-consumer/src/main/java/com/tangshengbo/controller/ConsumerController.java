@@ -2,14 +2,13 @@ package com.tangshengbo.controller;
 
 import com.tangshengbo.client.ProducerClient;
 import io.swagger.annotations.ApiOperation;
-import org.apache.commons.lang.time.FastDateFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Date;
+//import io.swagger.annotations.ApiOperation;
 
 /**
  * Created by Tang on 2017/7/19.
@@ -29,7 +28,8 @@ public class ConsumerController {
     @GetMapping("/currentDateTime")
     public String getDateInstance() {
         logger.info("ConsumerController.............");
-        return FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\tconsumer";
+//        FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\tconsumer";
+        return client.getDateInstance();
     }
 
     @GetMapping("/week/{currentDate}")
